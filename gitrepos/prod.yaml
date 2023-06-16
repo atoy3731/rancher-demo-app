@@ -1,0 +1,16 @@
+kind: GitRepo
+apiVersion: fleet.cattle.io/v1alpha1
+metadata:
+  name: demo-prod
+  namespace: fleet-default
+spec:
+  repo: ssh://git@git-ssh.atoy.lol/home/coder.git
+  clientSecretName: private-key
+  targets:
+  - name: prod
+    clusterSelector:
+      matchLabels:
+        env: prod
+  paths:
+  - ./backend/chart/
+  - ./frontend/chart/

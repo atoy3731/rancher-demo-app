@@ -1,0 +1,7 @@
+defaultNamespace: demo
+
+helm:
+  chart: ./chart
+  values:
+    image:
+      tag: "1.0"
