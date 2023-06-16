@@ -12,5 +12,5 @@ spec:
       matchLabels:
         env: staging
   paths:
-  - ./backend/chart/
-  - ./frontend/chart/
+  - ./backend/
+  - ./frontend/
