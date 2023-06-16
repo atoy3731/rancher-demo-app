@@ -5,7 +5,7 @@ metadata:
   namespace: fleet-default
 spec:
   repo: https://github.com/atoy3731/rancher-demo-app.git
-  branch: prod
+  branch: staging
   targets:
   - name: prod
     clusterSelector:
