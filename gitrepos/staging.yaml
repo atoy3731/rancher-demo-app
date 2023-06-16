@@ -1,16 +1,16 @@
 kind: GitRepo
 apiVersion: fleet.cattle.io/v1alpha1
 metadata:
-  name: demo-prod
+  name: demo-staging
   namespace: fleet-default
 spec:
   repo: https://github.com/atoy3731/rancher-demo-app.git
   branch: staging
   targets:
-  - name: prod
+  - name: staging
     clusterSelector:
       matchLabels:
-        env: prod
+        env: staging
   paths:
   - ./backend/chart/
   - ./frontend/chart/
