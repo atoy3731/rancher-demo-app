@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 import os
 
 PORT = int(os.environ.get('PORT', '5000'))
-VERSION = "1.0"
+VERSION = "2.0"
 
 app = Flask(__name__)
 
