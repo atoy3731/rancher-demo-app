@@ -18,10 +18,10 @@ $(function() {
             $.ajax({
                 url: "api/version",
                 success: function(data) {
-                    $('#results').html('Backend Version:' + data.version);
+                    $('#results').html('Backend Version: <b>' + data.version + '</b>');
                 },
                 error: function () {
-                    $('#results').html('ERROR: Version Check Failed.');
+                    $('#results').html('<b>ERROR<b/>: Version Check Failed.');
                 },
                 timeout: 2000
             });
