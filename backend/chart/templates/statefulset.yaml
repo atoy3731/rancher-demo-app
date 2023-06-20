@@ -28,12 +28,6 @@ spec:
       serviceAccountName: {{ include "demo-frontend.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-      {{- if .Values.persistence.enabled }}
-      volumes:
-      - name: backend-storage
-        persistentVolumeClaim:
-          claimName: backend-pvc
-      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
