@@ -7,6 +7,23 @@ helm:
       tag: "1.0"
 
 targetCustomizations:
+- name: dev
+  clusterSelector:
+    matchLabels:
+      env: dev
+  helm:
+    values:
+      ingress:
+        enabled: true
+        hosts:
+          - host: frontend.dev.kube.lol
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
+        tls:
+        - secretName: kube-lol
+          hosts:
+            - frontend.dev.kube.lol
 - name: staging
   clusterSelector:
     matchLabels:
