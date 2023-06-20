@@ -3,7 +3,7 @@
         <title>Rancher Demo App</title>
         <style>
             body {
-                font-family: 'Poppins';
+                font-family: 'Arial';
                 text-align: center;
                 margin: 20px;
             }
@@ -15,6 +15,17 @@
             #results {
                 font-size: 2.0em;
             }
+
+            .button {
+                background-color: #0275a6; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="script.js"></script>
@@ -24,7 +35,7 @@
             <img src="rancher-federal.png" />
         </div>
         <div class="buffer">
-            <button type="button" id="enable_ping">Enable API Version Check</button>
+            <button type="button" class="button" id="enable_ping">Enable API Version Check</button>
         </div>
         <div id="results" class="buffer"></div>
     </body>
