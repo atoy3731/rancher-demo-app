@@ -5,6 +5,16 @@ metadata:
   labels:
     {{- include "demo-frontend.labels" . | nindent 4 }}
 spec:
+  {{- if .Values.persistence.enabled }}
+  volumeClaimTemplates:
+  - metadata:
+      name: backend-storage
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: {{ .Values.persistence.size }}
+  {{- end }}
   serviceName: "backend"
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -65,13 +75,3 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-    {{- if .Values.persistence.enabled }}
-    volumeClaimTemplates:
-    - metadata:
-        name: backend-storage
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        resources:
-          requests:
-            storage: {{ .Values.persistence.size }}
-    {{- end }}
