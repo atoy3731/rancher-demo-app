@@ -4,7 +4,7 @@ helm:
   chart: ./chart
   values:
     image:
-      tag: "1.0"
+      tag: "2.0"
 
 targetCustomizations:
 - name: dev
