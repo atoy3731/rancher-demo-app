@@ -2,6 +2,11 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+persistence:
+  enabled: false
+  size: 1Gi
+  storageClass: ''
+
 replicaCount: 1
 
 image:
