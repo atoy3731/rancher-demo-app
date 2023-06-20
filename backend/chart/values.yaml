@@ -7,7 +7,7 @@ persistence:
   size: 1Gi
   storageClass: ''
 
-replicaCount: 1
+replicaCount: 3
 
 image:
   repository: harbor.atoy.dev/public/demo-backend
