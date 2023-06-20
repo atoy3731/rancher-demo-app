@@ -7,10 +7,10 @@ spec:
   repo: https://github.com/atoy3731/rancher-demo-app.git
   branch: staging
   targets:
-  - name: prod
+  - name: staging
     clusterSelector:
       matchLabels:
         env: staging
   paths:
-  - ./backend/chart/
-  - ./frontend/chart/
+  - ./backend/
+  - ./frontend/

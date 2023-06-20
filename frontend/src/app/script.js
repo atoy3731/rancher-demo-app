@@ -4,11 +4,11 @@ $(function() {
     $('#enable_ping').on('click', function() {
         if (pinging) {
             pinging = false;
-            $('#enable_ping').html('Enable Backend Ping');
+            $('#enable_ping').html('Enable API Version Check');
             $('#results').html('');
         } else {
             pinging = true;
-            $('#enable_ping').html('Disable Backend Ping');
+            $('#enable_ping').html('Disable API Version Check');
             $('#results').html('');
         }
     });
@@ -18,10 +18,10 @@ $(function() {
             $.ajax({
                 url: "api/version",
                 success: function(data) {
-                    $('#results').html('Backend Version:' + data.version);
+                    $('#results').html("Backend Version:&nbsp;<b>" + data.version + "</b>");
                 },
                 error: function () {
-                    $('#results').html('ERROR: Version Check Failed.');
+                    $('#results').html('<b>ERROR<b/>: Version Check Failed.');
                 },
                 timeout: 2000
             });

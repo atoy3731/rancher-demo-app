@@ -6,14 +6,38 @@ helm:
     image:
       tag: "1.0"
 
-    ingress:
-      enabled: true
-      hosts:
-        - host: frontend.kube.lol
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
-      tls:
-       - secretName: frontend-cert
-         hosts:
-           - frontend.kube.lol
+targetCustomizations:
+- name: staging
+  clusterSelector:
+    matchLabels:
+      env: staging
+  helm:
+    values:
+      ingress:
+        enabled: true
+        hosts:
+          - host: frontend.staging.kube.lol
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
+        tls:
+        - secretName: kube-lol
+          hosts:
+            - frontend.staging.kube.lol
+- name: prod
+  clusterSelector:
+    matchLabels:
+      env: prod
+  helm:
+    values:
+      ingress:
+        enabled: true
+        hosts:
+          - host: frontend.prod.kube.lol
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
+        tls:
+        - secretName: kube-lol
+          hosts:
+            - frontend.prod.kube.lol
