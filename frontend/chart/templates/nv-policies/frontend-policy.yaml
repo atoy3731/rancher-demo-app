@@ -53,8 +53,12 @@ spec:
   process:
   - action: allow
     allow_update: false
-    name: sh
-    path: /bin/sh
+    name: pause
+    path: /pause
+  - action: allow
+    allow_update: false
+    name: script
+    path: /usr/bin/script
   - action: allow
     allow_update: false
     name: bash
