@@ -7,4 +7,6 @@ RUN pip3 install -r /tmp/requirements.txt && \
 
 COPY app/app.py /app.py
 
+USER 1000
+
 CMD [ "python3", "/app.py" ]
