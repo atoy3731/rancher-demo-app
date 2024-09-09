@@ -42,11 +42,11 @@ spec:
       labels:
         app: privileged-pod
     spec:
-      securityContext:
-        privileged: true
       containers:
       - name: privileged-pod
         image: ubuntu:latest
+        securityContext:
+          privileged: true
         command:
         - /bin/bash
         - -c
