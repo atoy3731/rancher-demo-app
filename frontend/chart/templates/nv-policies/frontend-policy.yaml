@@ -31,13 +31,24 @@ spec:
   - action: allow
     applications:
     - SSL
-    name: nv.frontend.demo-ingress-0
+    name: nv.frontend.{{ .Release.Namespace }}-ingress-0
     ports: tcp/8080
     priority: 0
     selector:
       comment: ""
       criteria: []
       name: external
+      original_name: ""
+  - action: allow
+    applications:
+    - HTTP
+    name: nv.frontend.{{ .Release.Namespace }}-ingress-1
+    ports: tcp/8080
+    priority: 0
+    selector:
+      comment: ""
+      criteria: []
+      name: nodes
       original_name: ""
   process: []
   process_profile:

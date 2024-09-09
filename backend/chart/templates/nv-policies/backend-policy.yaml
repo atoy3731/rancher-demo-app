@@ -29,7 +29,7 @@ spec:
       original_name: ""
   - action: allow
     applications:
-    - SSL
+    - HTTP
     name: nv.backend.{{ .Release.Namespace }}-ingress-1
     ports: tcp/5000
     priority: 0
