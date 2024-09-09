@@ -1,0 +1,55 @@
+apiVersion: neuvector.com/v1
+kind: NvSecurityRule
+metadata:
+  name: nv.bad-pod.demo
+spec:
+  dlp:
+    settings: []
+    status: true
+  egress: []
+  file: []
+  ingress:
+  - action: allow
+    applications:
+    - HTTP
+    name: nv.bad-pod.demo-ingress-0
+    ports: any
+    priority: 0
+    selector:
+      comment: ""
+      criteria:
+      - key: domain
+        op: =
+        value: demo
+      - key: service
+        op: =
+        value: bad-pod.demo
+      name: nv.bad-pod.demo
+      original_name: ""
+  process:
+  - action: allow
+    allow_update: false
+    name: pause
+    path: /pause
+  - action: allow
+    allow_update: false
+    name: python3
+    path: /usr/local/bin/python3.11
+  process_profile:
+    baseline: basic
+  target:
+    policymode: Protect
+    selector:
+      comment: ""
+      criteria:
+      - key: domain
+        op: =
+        value: demo
+      - key: service
+        op: =
+        value: bad-pod.demo
+      name: nv.bad-pod.demo
+      original_name: ""
+  waf:
+    settings: []
+    status: true
