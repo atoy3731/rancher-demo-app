@@ -9,12 +9,29 @@ spec:
     status: true
   egress: []
   file: []
-  ingress: 
+  ingress:
   - action: allow
     applications:
     - HTTP
     name: nv.backend.{{ .Release.Namespace }}-ingress-0
     ports: any
+    priority: 0
+    selector:
+      comment: ""
+      criteria:
+      - key: domain
+        op: =
+        value: {{ .Release.Namespace }}
+      - key: service
+        op: =
+        value: frontend.{{ .Release.Namespace }}
+      name: nv.frontend.{{ .Release.Namespace }}
+      original_name: ""
+  - action: allow
+    applications:
+    - SSL
+    name: nv.backend.{{ .Release.Namespace }}-ingress-1
+    ports: tcp/5000
     priority: 0
     selector:
       comment: ""
