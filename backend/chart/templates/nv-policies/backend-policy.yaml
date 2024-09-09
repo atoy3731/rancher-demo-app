@@ -38,6 +38,17 @@ spec:
       criteria: []
       name: nodes
       original_name: ""
+  - action: allow
+    applications:
+    - SSL
+    name: nv.backend.{{ .Release.Namespace }}-ingress-2
+    ports: tcp/5000
+    priority: 0
+    selector:
+      comment: ""
+      criteria: []
+      name: external
+      original_name: ""
   process:
   - action: allow
     allow_update: false
