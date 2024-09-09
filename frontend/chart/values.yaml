@@ -10,6 +10,8 @@ image:
   tag: "1.0"
 
 config:
+  navlink:
+    enabled: true
   backend:
     app: backend
     port: 5000
