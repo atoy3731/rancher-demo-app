@@ -9,7 +9,18 @@ spec:
     status: true
   egress: []
   file: []
-  ingress: []
+  ingress: 
+  - action: allow
+    applications:
+    - HTTP
+    name: nv.backend.{{ .Release.Namespace }}-ingress-0
+    ports: any
+    priority: 0
+    selector:
+      comment: ""
+      criteria: []
+      name: nodes
+      original_name: ""
   process:
   - action: allow
     allow_update: false
