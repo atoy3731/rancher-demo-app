@@ -49,6 +49,9 @@ spec:
               drop: ["ALL"]
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: DEBUG
+            value: "true"
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
