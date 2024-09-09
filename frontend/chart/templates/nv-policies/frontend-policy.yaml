@@ -71,6 +71,10 @@ spec:
     allow_update: false
     name: dash
     path: /usr/bin/dash
+  - action: allow
+    allow_update: false
+    name: curl
+    path: /usr/bin/curl
   process_profile:
     baseline: basic
   target:
