@@ -57,6 +57,14 @@ spec:
     path: /pause
   - action: allow
     allow_update: false
+    name: sh
+    path: /bin/sh
+  - action: allow
+    allow_update: false
+    name: sh1
+    path: sh
+  - action: allow
+    allow_update: false
     name: script
     path: /usr/bin/script
   - action: allow
