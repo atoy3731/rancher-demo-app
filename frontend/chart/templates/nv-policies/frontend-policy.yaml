@@ -58,11 +58,7 @@ spec:
   - action: allow
     allow_update: false
     name: sh
-    path: /bin/sh
-  - action: allow
-    allow_update: false
-    name: sh1
-    path: sh
+    path: /usr/bin/dash
   - action: allow
     allow_update: false
     name: script
