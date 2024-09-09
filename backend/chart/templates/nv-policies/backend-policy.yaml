@@ -54,4 +54,4 @@ spec:
   waf:
     settings: []
     status: true
-{{- fi }}
+{{- end }}
