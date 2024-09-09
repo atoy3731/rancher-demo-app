@@ -50,7 +50,11 @@ spec:
       criteria: []
       name: nodes
       original_name: ""
-  process: []
+  process:
+  - action: allow
+    allow_update: false
+    name: sh
+    path: /bin/sh
   process_profile:
     baseline: basic
   target:
