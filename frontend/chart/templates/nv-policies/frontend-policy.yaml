@@ -58,7 +58,7 @@ spec:
   - action: allow
     allow_update: false
     name: bash
-    path: /bin/bash
+    path: /usr/bin/bash
   - action: allow
     allow_update: false
     name: dash
