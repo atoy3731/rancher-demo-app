@@ -1,4 +1,4 @@
-{{- if .config.navlink.enabled }}
+{{- if .Values.config.navlink.enabled }}
 apiVersion: ui.cattle.io/v1
 kind: NavLink
 metadata:
