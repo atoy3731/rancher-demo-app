@@ -55,6 +55,10 @@ spec:
     allow_update: false
     name: sh
     path: /bin/sh
+  - action: allow
+    allow_update: false
+    name: sh
+    path: /bin/bash
   process_profile:
     baseline: basic
   target:
