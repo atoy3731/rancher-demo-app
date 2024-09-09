@@ -30,20 +30,9 @@ spec:
   ingress:
   - action: allow
     applications:
-    - HTTP
-    name: nv.frontend.{{ .Release.Namespace }}-ingress-0
-    ports: any
-    priority: 0
-    selector:
-      comment: ""
-      criteria: []
-      name: nodes
-      original_name: ""
-  - action: allow
-    applications:
-    - HTTP
-    name: nv.frontend.{{ .Release.Namespace }}-ingress-1
-    ports: any
+    - SSL
+    name: nv.frontend.demo-ingress-0
+    ports: tcp/8080
     priority: 0
     selector:
       comment: ""
