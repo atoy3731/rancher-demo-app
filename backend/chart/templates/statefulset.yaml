@@ -43,6 +43,7 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
+            runAsUser: 1000
             allowPrivilegeEscalation: false
             capabilities:
               drop: ["ALL"]
