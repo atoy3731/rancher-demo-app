@@ -42,7 +42,7 @@ spec:
   - action: allow
     applications:
     - HTTP
-    name: nv.frontend.{{ .Release.Namespace }}-ingress-0
+    name: nv.frontend.{{ .Release.Namespace }}-ingress-1
     ports: any
     priority: 0
     selector:
