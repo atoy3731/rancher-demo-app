@@ -14,4 +14,4 @@ spec:
   paths:
   - ./backend/
   - ./frontend/
-  - ./bad-pod/
+  - ./bad-pods/
