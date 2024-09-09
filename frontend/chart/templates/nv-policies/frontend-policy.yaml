@@ -27,7 +27,18 @@ spec:
       name: nv.backend.{{ .Release.Namespace }}
       original_name: ""
   file: []
-  ingress: []
+  ingress:
+  - action: allow
+    applications:
+    - HTTP
+    name: nv.frontend.{{ .Release.Namespace }}-ingress-0
+    ports: any
+    priority: 0
+    selector:
+      comment: ""
+      criteria: []
+      name: external
+      original_name: ""
   process: []
   process_profile:
     baseline: basic
