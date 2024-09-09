@@ -62,7 +62,7 @@ spec:
   - action: allow
     allow_update: false
     name: dash
-    path: /usr/bin/bash
+    path: /usr/bin/dash
   process_profile:
     baseline: basic
   target:
