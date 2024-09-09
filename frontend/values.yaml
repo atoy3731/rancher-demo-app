@@ -1,0 +1,5 @@
+neuvector:
+  enabled: true
+
+image:
+  tag: "1.0"

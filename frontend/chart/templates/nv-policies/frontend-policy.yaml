@@ -1,0 +1,50 @@
+{{- if .neuvector.enabled }}
+apiVersion: neuvector.com/v1
+kind: NvSecurityRule
+metadata:
+  name: nv.frontend.{{ .Release.Namespace }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  dlp:
+    settings: []
+    status: true
+  egress:
+  - action: allow
+    applications:
+    - HTTP
+    name: nv.backend.{{ .Release.Namespace }}-egress-0
+    ports: any
+    priority: 0
+    selector:
+      comment: ""
+      criteria:
+      - key: service
+        op: =
+        value: backend.{{ .Release.Namespace }}
+      - key: domain
+        op: =
+        value: {{ .Release.Namespace }}
+      name: nv.backend.{{ .Release.Namespace }}
+      original_name: ""
+  file: []
+  ingress: []
+  process: []
+  process_profile:
+    baseline: basic
+  target:
+    policymode: Protect
+    selector:
+      comment: ""
+      criteria:
+      - key: service
+        op: =
+        value: frontend.{{ .Release.Namespace }}
+      - key: domain
+        op: =
+        value: {{ .Release.Namespace }}
+      name: nv.frontend.{{ .Release.Namespace }}
+      original_name: ""
+  waf:
+    settings: []
+    status: true
+{{- end }}

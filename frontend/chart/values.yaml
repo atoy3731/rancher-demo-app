@@ -16,6 +16,9 @@ config:
     app: backend
     port: 5000
 
+neuvector:
+  enabled: false
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
