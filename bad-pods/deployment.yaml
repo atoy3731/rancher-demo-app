@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bad-pod
+  labels:
+    app: bad-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bad-pod
+  template:
+    metadata:
+      labels:
+        app: bad-pod
+    spec:
+      containers:
+      - name: bad-pod
+        image: ubuntu:latest
+        command:
+        - /bin/bash
+        - -c
+        - |
+          #!/bin/bash
+          apt-get update -y
+          apt-get install -y curl
+          tail -f /dev/null
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: privileged-pod
+  labels:
+    app: privileged-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: privileged-pod
+  template:
+    metadata:
+      labels:
+        app: privileged-pod
+    spec:
+      containers:
+      - name: privileged-pod
+        image: ubuntu:latest
+        securityContext:
+          privileged: true
+        command:
+        - /bin/bash
+        - -c
+        - |
+          #!/bin/bash
+          apt-get update -y
+          apt-get install -y curl
+          tail -f /dev/null
