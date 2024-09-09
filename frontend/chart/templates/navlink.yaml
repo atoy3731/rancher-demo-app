@@ -15,6 +15,6 @@ spec:
     name: frontend
     namespace: {{ .Release.Namespace }}
     path: /
-    port: '8080'
+    port: {{ .Values.service.port }}
     scheme: http
 {{- end }}
