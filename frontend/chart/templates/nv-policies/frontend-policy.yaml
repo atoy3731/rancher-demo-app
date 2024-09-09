@@ -39,6 +39,17 @@ spec:
       criteria: []
       name: external
       original_name: ""
+  - action: allow
+    applications:
+    - HTTP
+    name: nv.frontend.{{ .Release.Namespace }}-ingress-0
+    ports: any
+    priority: 0
+    selector:
+      comment: ""
+      criteria: []
+      name: nodes
+      original_name: ""
   process: []
   process_profile:
     baseline: basic
