@@ -35,6 +35,14 @@ spec:
     allow_update: false
     name: python3
     path: /usr/local/bin/python3.11
+  - action: allow
+    allow_update: false
+    name: curl
+    path: /usr/bin/curl
+  - action: allow
+    allow_update: false
+    name: curl
+    path: /usr/bin/apt-get
   process_profile:
     baseline: basic
   target:
