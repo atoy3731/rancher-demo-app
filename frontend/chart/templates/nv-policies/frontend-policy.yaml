@@ -57,8 +57,12 @@ spec:
     path: /bin/sh
   - action: allow
     allow_update: false
-    name: sh
+    name: bash
     path: /bin/bash
+  - action: allow
+    allow_update: false
+    name: dash
+    path: /usr/bin/bash
   process_profile:
     baseline: basic
   target:
